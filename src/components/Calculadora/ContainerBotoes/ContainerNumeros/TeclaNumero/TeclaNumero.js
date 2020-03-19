@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from '../../../../../assets/css/Calculadora.module.css'
 
-const teclaNumero = props => (
+const TeclaNumero = props => (
   <div
     className={getClass(props.numero)}
     onClick={() => props.onClicked(props.numero)}
@@ -17,4 +17,4 @@ function getClass (numero) {
   }[numero] || classes.TeclaNumero
 }
 
-export default teclaNumero
+export default TeclaNumero
