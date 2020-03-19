@@ -19,7 +19,7 @@ export default class Calculadora extends React.Component {
   }
 
   _onClicked = valor => {
-    if(valor === 'undefined' || valor === undefined) return
+    if (valor === 'undefined' || valor === undefined) return
     if (isNaN(valor)) {
       if (valor === 'limpar') {
         this._limpaCaptura()
@@ -40,16 +40,20 @@ export default class Calculadora extends React.Component {
         const acao = this.state.acao || '+'
         const operacao = String(numero1) + acao + String(numero2)
 
+        const resultado = eval(operacao)
+
         this.setState({
-          valor: eval(operacao)
+          valor:
+            isNaN(resultado) ||
+            ((acao === '*' || acao === '/') && (numero1 === 0 || numero2 === 0))
+              ? 0
+              : resultado
         })
       }
     } else {
-      this.setState(
-        {
-          valor: this.state.valor.replace(/^(0)+/, '') + valor
-        }
-      )
+      this.setState({
+        valor: this.state.valor.replace(/^(0)+/, '') + valor
+      })
     }
   }
 
