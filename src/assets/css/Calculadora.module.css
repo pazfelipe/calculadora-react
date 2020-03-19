@@ -1,0 +1,77 @@
+:root {
+  --white: #ffffff;
+  --grey: #afafaf;
+  --deepGrey: #3f3f3f;
+}
+
+.Calculadora {
+  /* width: 350px; */
+  height: 500px;
+  background: var(--grey);
+  border-radius: 5px;
+  position: relative;
+  padding: 5px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 350px;
+  grid-template-rows: 15% 100%;
+}
+
+.Visor {
+  width: 100%;
+  height: 100%;
+  background: var(--white);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.ContainerBotoes {
+  width: 100%;
+  height: 85%;
+  background: var(--deepGrey);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 80% 20%;
+}
+
+.ContainerNumeros {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+}
+
+.TeclaNumeroZero,
+.TeclaNumeroZeroZero,
+.TeclaNumero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s linear;
+  background: blue;
+}
+
+.TeclaNumeroZero {
+  grid-row: 4/4;
+  grid-column: 1/1;
+  display: flex;
+}
+
+.TeclaNumeroZeroZero {
+  grid-row: 4/4;
+  grid-column: 2/4;
+  display: flex;
+}
+
+.TeclaNumeroZero:hover,
+.TeclaNumeroZeroZero:hover,
+.TeclaNumero:hover {
+  background: red;
+}
