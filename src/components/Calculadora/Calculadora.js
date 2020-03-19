@@ -9,13 +9,15 @@ export default class Calculadora extends React.Component {
     numero: ''
   }
 
-  _atualizaValor = valor => this.setState({numero: valor}) //this.setState({ numero: valor })
+  atualizaValor = valor => {
+    this.setState(state => ({ numero: `${state.numero}${valor}` }))
+  }
 
   render() {
     return (
       <div className={classes.Calculadora}>
-        <Visor />
-        <ContainerBotoes atualizaValor={valor => this._atualizaValor(valor)} />
+        <Visor valor={this.state.numero} />
+        <ContainerBotoes atualizaValor={this.atualizaValor} />
       </div>
     )
   }
