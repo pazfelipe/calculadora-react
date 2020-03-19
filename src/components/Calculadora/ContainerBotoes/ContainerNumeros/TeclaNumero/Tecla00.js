@@ -1,13 +1,13 @@
 import React from 'react'
 import classes from '../../../../../assets/css/Calculadora.module.css'
 
-const teclaNumeroZeroZero = props => (
+const TeclaNumeroZeroZero = props => (
   <div
     className={classes.TeclaNumeroZeroZero}
     onClick={() => props.onClicked(props.numero)}
   >
-    {props.numero}
+     <span id="numero00">00</span>
   </div>
 )
 
-export default teclaNumeroZeroZero
+export default TeclaNumeroZeroZero

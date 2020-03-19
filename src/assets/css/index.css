@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.TeclaAtiva {
+  color: #00ffe9 !important;
+  text-shadow: -2px -2px 10px #00ffe9, 2px 2px 10px #00ffe9 !important;
+  opacity: 1 !important;
+}
+
+.TeclaAtiva.Desligar {
+  color: #FFFFFF !important;
+  text-shadow: -2px -2px 10px #FFFFFF, 2px 2px 10px #FFFFFF !important;
+}
+
+.TeclaAtiva.TeclaSomar {
+  color: #FFFFFF !important;
+  text-shadow: -2px -2px 10px #FFFFFF, 2px 2px 10px #FFFFFF !important;
+}

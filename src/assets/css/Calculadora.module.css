@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
 :root {
   --white: #ffffff;
   --grey: #afafaf;
   --deepGrey: #3f3f3f;
+  --neonteal: #00ffff;
+  --neonblue: #096aa2;
 }
 
 .Calculadora {
@@ -15,6 +19,12 @@
   display: grid;
   grid-template-columns: 350px;
   grid-template-rows: 15% 100%;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 }
 
 .Visor {
@@ -23,6 +33,21 @@
   background: var(--white);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  text-align: right;
+  padding: 0 20px;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 2px 5px rgba(255, 255, 255, 0.3);
+  z-index: 1;
+}
+
+.Visor p {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--neonblue);
+  text-shadow: 2px 2px 5px var(--grey);
+  font-family: 'Press Start 2P', cursive;
+  letter-spacing: 1px;
 }
 
 .ContainerBotoes {
@@ -40,12 +65,37 @@
 .ContainerNumeros {
   width: 100%;
   height: 100%;
-  background-color: red;
+  background-color: var(--deepGrey);
   display: inline-grid;
   grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  grid-row: 1/1;
+  grid-column: 1/2;
 }
 
+.ContainerOperacoes {
+  width: 100%;
+  height: 100%;
+  display: inline-grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto auto;
+  grid-row: 1/1;
+  grid-column: 2/2;
+}
+
+.ContainerBottom {
+  width: 100%;
+  height: 100%;
+  background-color: var(--deepGrey);
+  display: inline-grid;
+  grid-template-columns: 70% auto;
+  grid-template-rows: auto;
+  grid-row: 2/2;
+  grid-column: 1/3;
+}
+
+.TeclaSomar,
+.TeclaDesligar,
 .TeclaNumeroZero,
 .TeclaNumeroZeroZero,
 .TeclaNumero {
@@ -55,23 +105,51 @@
   text-align: center;
   cursor: pointer;
   transition: 0.2s linear;
-  background: blue;
+  background-color: var(--deepGrey);
+  opacity: 0.4;
+  font-weight: bold;
 }
-
 .TeclaNumeroZero {
-  grid-row: 4/4;
   grid-column: 1/1;
   display: flex;
 }
 
 .TeclaNumeroZeroZero {
-  grid-row: 4/4;
   grid-column: 2/4;
   display: flex;
 }
 
+.TeclaDesligar:hover,
 .TeclaNumeroZero:hover,
 .TeclaNumeroZeroZero:hover,
 .TeclaNumero:hover {
-  background: red;
+  color: var(--neonteal);
+  opacity: 1;
+}
+
+.TeclaDesligar:hover {
+  color: var(--white);
+}
+
+.TeclaDesligar:hover span,
+.TeclaNumeroZero:hover span,
+.TeclaNumeroZeroZero:hover span,
+.TeclaNumero:hover span {
+  text-shadow: -2px -2px 10px var(--neonteal), 2px 2px 10px var(--neonteal);
+}
+
+.TeclaDesligar:hover span {
+  text-shadow: -2px -2px 10px var(--white), 2px 2px 10px var(--white);
+}
+
+.TeclaDesligar {
+  background: orange;
+}
+
+.TeclaSomar {
+  background-color: var(--neonteal);
+}
+
+.TeclaSomar:hover {
+  opacity: 1;
 }

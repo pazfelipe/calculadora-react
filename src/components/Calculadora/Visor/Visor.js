@@ -1,10 +1,10 @@
 import React from 'react'
 import classes from '../../../assets/css/Calculadora.module.css'
 
-const visor = props => (
+const Visor = props => (
   <div className={classes.Visor}>
-    {props.valor}
+    <p>{props.valor}</p>
   </div>
 )
 
-export default visor
+export default Visor

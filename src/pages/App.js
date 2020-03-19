@@ -7,7 +7,7 @@ export default class App extends Component {
     return (
       <div className={classes.App}>
         <div className={classes.AppHeader}>
-          <p>Calculadora em React</p>
+          <p className={classes.Titulo}>Calculadora em React</p>
           <Calculadora />
         </div>
       </div>
